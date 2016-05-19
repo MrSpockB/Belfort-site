@@ -247,3 +247,4 @@
     	padding: 0;
 	}
 	
+	.pagination li{ display: inline-block;}

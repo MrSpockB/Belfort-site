@@ -1,2 +1,8 @@
 html, body.login-form { height: 100%;}
 body.login-form { display: flex; align-items: center;}
+
+.col-img{ width: 23%; margin-right: 14px; border:1px solid #CCC; position: relative; }
+.col-img .delete { color: #F00; text-align: right; cursor: pointer; padding-left: 5px; margin-top: 5px; position: absolute;}
+.img{ max-width: 100%; }
+#gallery-content, #slider-content { margin-top: 10px;}
+#gallery-content ul li, #slider-content ul li {display: inline-block;}

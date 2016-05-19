@@ -712,7 +712,7 @@ h3 {
 }
 h4 {
     font-family: "Oswald", Arial, Tahoma, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
 }
 h5 {
     font-family: "Oswald", Arial, Tahoma, sans-serif;
@@ -1058,3 +1058,16 @@ h6 {
         max-width: 1240px;
     }
 }
+#Footer .container {
+    max-width: 98%;
+    width: 98%;
+}
+
+h3.bike-title{ font-weight: 700; width: 85%; margin: 0 auto; margin-bottom: 15px;}
+#Top_bar .menu_wrapper { border-bottom: 1px solid #8f9395; margin-right: -10px;}
+.bike-content{ margin-top: 32px; }
+#sliderCarousel .owl-item { text-align: center; }
+#sliderCarousel .owl-item img {max-height: 850px; display: inline-block; opacity: 0;}
+#sliderCarousel .owl-item .img-wrapper {background-position: center; background-size: cover;}
+#galleryCarousel{ background-color: #000; padding-top: 15px; padding-bottom: 15px;}
+#placeholder{ height: 100px; width: 100%;}

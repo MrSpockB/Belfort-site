@@ -27,6 +27,8 @@ class CreateBikesTable extends Migration
             $table->string('categoria');
             $table->string('codigoAX');
             $table->string('descAX');
+            $table->string('slug');
+            $table->integer('imagenPrincipal_id');
             $table->timestamps();
         });
     }

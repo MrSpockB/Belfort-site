@@ -627,38 +627,7 @@
 			
 		});
 		
-
-		/* ---------------------------------------------------------------------------
-		 * PrettyPhoto
-		 * --------------------------------------------------------------------------- */
-		var pretty = true;
-		if( window.mfn_prettyphoto.disable ) pretty = false;
-		if( window.mfn_prettyphoto.disableMobile && ( $(window).width() < 768 ) ) pretty = false;
-			
-		if( pretty ){
-			$('a[rel^="prettyphoto"], .prettyphoto').prettyPhoto({
-				default_width	: window.mfn_prettyphoto.width  ? window.mfn_prettyphoto.width  : 500,
-				default_height	: window.mfn_prettyphoto.height ? window.mfn_prettyphoto.height : 344,
-				show_title		: window.mfn_prettyphoto.title  ? window.mfn_prettyphoto.title  : false,
-				theme			: window.mfn_prettyphoto.style  ? window.mfn_prettyphoto.style  : 'pp_default',
-				deeplinking		: false,
-				social_tools	: false
-			});
-		}
 		
-        
-		/* ---------------------------------------------------------------------------
-		 * Black & White
-		 * --------------------------------------------------------------------------- */
-		function mfn_greyscale(){
-	        $('.greyscale .image_wrapper > a, .greyscale .client_wrapper .gs-wrapper, .greyscale.portfolio-photo a').has('img').BlackAndWhite({
-	    		hoverEffect		: false,
-	    		intensity		: 1			// opacity: 0, 0.1, ... 1
-	    	});
-		}
-		mfn_greyscale();
-		
-
 		/* ---------------------------------------------------------------------------
 		 * Sliding Top
 		 * --------------------------------------------------------------------------- */
@@ -730,26 +699,6 @@
 			}
 		}
 		checkIE();
-		
-		
-		/* ---------------------------------------------------------------------------
-		 * Paralex Backgrounds
-		 * --------------------------------------------------------------------------- */
-		var ua = navigator.userAgent,
-		isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-		
-		if( ! isMobileWebkit && $(window).width() >= 768 ){
-			
-			$.stellar({
-				horizontalScrolling	: false,
-				responsive			: true
-			});
-			
-		} else {
-			
-			$('.section[data-stellar-background-ratio]').css( 'background-attachment' , 'scroll' );
-		
-		}
 		
 		
 		/* ---------------------------------------------------------------------------
@@ -1179,137 +1128,6 @@
 	 * $(window).load
 	 * ----------------------------------------------------------------------------------------------------------------------- */
 	$(window).load(function(){
-
-		/* ---------------------------------------------------------------------------
-		 * Isotope
-		 * --------------------------------------------------------------------------- */
-		// Portfolio - Isotope
-		$('.portfolio_wrapper .isotope:not( .masonry-flat, .masonry-hover )').isotope({
-			itemSelector	: '.portfolio-item',
-			layoutMode		: 'fitRows',
-			isOriginLeft	: rtl ? false : true
-		});
-		
-		// Portfolio - Masonry Flat
-		$('.portfolio_wrapper .masonry-flat').isotope({
-			itemSelector	: '.portfolio-item',
-			percentPosition	: true,
-			masonry			: {
-				columnWidth: 1
-		    },
-		    isOriginLeft	: rtl ? false : true
-		});
-
-		// Blog & Portfolio - Masonry
-		$('.isotope.masonry, .isotope.masonry-hover').isotope({
-			itemSelector	: '.isotope-item',
-			layoutMode		: 'masonry',
-			isOriginLeft	: rtl ? false : true
-		});
-		
-		// Portfolio | Active Category
-		function portfolioActive(){
-			var el 		= $('.isotope-filters .filters_wrapper')
-			var active 	= el.attr('data-cat');
-			
-			if( active ){
-				el.find('li.'+active).addClass('current-cat');
-				$('.isotope').isotope({ filter: '.category-' + active });
-			}
-		}
-		portfolioActive();
-
-		
-		/* ---------------------------------------------------------------------------
-		 * Chart
-		 * --------------------------------------------------------------------------- */
-		$('.chart').waypoint({
-			offset		: '100%',
-			triggerOnce	: true,
-			handler		: function(){
-				
-				var color = $(this).attr('data-color');
-				var lineW = simple ? 4 : 8;
-				
-				$(this).easyPieChart({
-					animate		: 1000,
-					barColor	: color,
-					lineCap		: 'circle',
-					lineWidth	: lineW,
-					size		: 140,
-					scaleColor	: false,
-					trackColor	: '#f8f8f8'
-				});
-				
-			}
-		});
-		
-		
-		/* ---------------------------------------------------------------------------
-		 * Skills
-		 * --------------------------------------------------------------------------- */
-		$('.bars_list').waypoint({
-			offset		: '100%',
-			triggerOnce	: true,
-			handler		: function(){
-				$(this).addClass('hover');
-			}
-		});
-		
-		
-		/* ---------------------------------------------------------------------------
-		 * Progress Icons
-		 * --------------------------------------------------------------------------- */
-		$('.progress_icons').waypoint({
-			offset		: '100%',
-			triggerOnce	: true,
-			handler		: function(){
-				
-				var el = $(this);
-				var active = el.attr('data-active');
-				var color = el.attr('data-color');
-				var icon = el.find('.progress_icon');
-				var timeout = 200;		// timeout in milliseconds
-				
-				icon.each(function(i){
-					if( i < active ){
-						var time = (i+1) * timeout; 
-						setTimeout(function(){
-							$(icon[i])
-								.addClass('themebg')
-								.css('background-color',color);
-						},time );	
-						
-					}
-				});
-				
-			}
-		});
-		
-		
-		/* ---------------------------------------------------------------------------
-		 * Animate Math [counter, quick_fact, etc.]
-		 * --------------------------------------------------------------------------- */
-		$('.animate-math .number').waypoint({
-			offset		: '100%',
-			triggerOnce	: true,
-			handler		: function(){
-				var el			= $(this);
-				var duration	= Math.floor((Math.random()*1000)+1000);
-				var to			= el.attr('data-to');
-
-				$({property:0}).animate({property:to}, {
-					duration	: duration,
-					easing		:'linear',
-					step		: function() {
-						el.text(Math.floor(this.property));
-					},
-					complete	: function() {
-						el.text(this.property);
-					}
-				});
-			}
-		});
 		
 		// Full Screen Section
 		mfn_sectionH();

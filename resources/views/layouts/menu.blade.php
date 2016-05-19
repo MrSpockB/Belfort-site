@@ -45,7 +45,7 @@
 		<div class="column one">
 			<div class="top_bar_left clearfix">
 				<div class="logo">
-					<a href="#" id="logo" title="Belfort Bikes">
+					<a href="{{ url('/') }}" id="logo" title="Belfort Bikes">
 						<img class="logo-main scale-with-grid" src="{{ asset('images/logo-icono.png') }}" alt="Belfort Bikes">
 						<img class="logo-sticky scale-with-grid" src="{{ asset('images/logo-icono.png') }}" alt="">
 						<img class="logo-mobile scale-with-grid" src="{{ asset('images/logo-icono.png') }}" alt="">
@@ -54,7 +54,7 @@
 				<div class="menu_wrapper">
 					<nav id="menu">
 						<ul id="menu-principal" class="menu">
-							<li><a href="#"><span>BIKES</span></a></li>
+							<li><a href="{{ url('/bikes') }}"><span>BIKES</span></a></li>
 							<li><a href="#"><span>FOUR BROTHERS</span></a></li>
 							<li><a href="#"><span>DISTRIBUCIONES</span></a></li>
 							<li><a href="#"><span>SOPORTE</span></a></li>
