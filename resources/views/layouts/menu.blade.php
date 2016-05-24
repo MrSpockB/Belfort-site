@@ -66,6 +66,14 @@
 					</a>
 				</div>
 			</div>
+			<div class="top_bar_right">
+				<div class="top_bar_right_wrapper">
+					<a href="{{ url("/carro") }}" id="header_cart">
+						<i class="icon-basket"></i>
+						<span>{{ $numProd }}</span>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

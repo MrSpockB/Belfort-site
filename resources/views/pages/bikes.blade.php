@@ -17,7 +17,7 @@
 							</div>
 							<div class="products_wrapper isotope_wrapper">
 								<div class="yit-wcan-container">
-									<ul class="products grid col-4">
+									<ul class="products grid col-4 clearfix">
 										@foreach ($bikes as $bike)
 										    <li class="product">
 										    	<div class="hover_box hover_box_product">

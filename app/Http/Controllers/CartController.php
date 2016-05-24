@@ -14,7 +14,7 @@ class CartController extends Controller
     {
         $bike_id = Request::get('product_id');
         $bike = Bike::find($bike_id);
-        Cart::add(array('id'=>$bike_id, 'name'=> $bike->nombre, 'qty'=> 1, 'price' => $bike->precio, ['img' => $bike->imagenPrincipal->ruta]));
+        Cart::add($bike_id, $bike->nombre, 1, $bike->precio, array('img' => $bike->imagenPrincipal->ruta));
         $cart = Cart::content();
         return view('pages.carro', array('cart'=>$cart, 'title'=> 'Producto Agregado'));
     }
